@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "product_detail",
+  "position": {
+    "x": 24,
+    "y": 616,
+    "width": 1392,
+    "height": 260,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Forecasts"
+                    }
+                  },
+                  "Property": "Store"
+                }
+              },
+              "queryRef": "Forecasts.Store",
+              "nativeQueryRef": "Store"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Forecasts"
+                    }
+                  },
+                  "Property": "Product"
+                }
+              },
+              "queryRef": "Forecasts.Product",
+              "nativeQueryRef": "Product"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Forecasts"
+                    }
+                  },
+                  "Property": "Actual units"
+                }
+              },
+              "queryRef": "Forecasts.Actual units",
+              "nativeQueryRef": "Actual units"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Forecasts"
+                    }
+                  },
+                  "Property": "Forecast units"
+                }
+              },
+              "queryRef": "Forecasts.Forecast units",
+              "nativeQueryRef": "Forecast units"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Forecasts"
+                    }
+                  },
+                  "Property": "MAE"
+                }
+              },
+              "queryRef": "Forecasts.MAE",
+              "nativeQueryRef": "MAE"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Forecasts"
+                    }
+                  },
+                  "Property": "WAPE"
+                }
+              },
+              "queryRef": "Forecasts.WAPE",
+              "nativeQueryRef": "WAPE"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Performance by product — positive sales, stock availability unknown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

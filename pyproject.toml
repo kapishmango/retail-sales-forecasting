@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retail-sales-forecasting"
+version = "1.0.0"
+description = "Reproducible retail analytics portfolio project"
+requires-python = ">=3.11"
+dynamic = ["dependencies"]
+
+[project.scripts]
+retail-forecast = "retail_forecast.cli:main"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["retail_forecast*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.setuptools.package-data]
+retail_forecast = ["*.sql"]

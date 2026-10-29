@@ -1,0 +1,70 @@
+{
+  "evaluation": "rolling one-week-ahead; frozen model; observed previous test weeks may enter lags",
+  "target": "positive units sold, not latent demand",
+  "train_start": "2010-12-06",
+  "train_end": "2011-09-05",
+  "test_start": "2011-09-12",
+  "test_end": "2011-11-28",
+  "validation_start": "2011-07-18",
+  "training_rows": 800,
+  "products": 20,
+  "stores": 1,
+  "selected_parameters": {
+    "max_leaf_nodes": 31,
+    "l2_regularization": 10.0
+  },
+  "validation_candidates": [
+    {
+      "parameters": {
+        "max_leaf_nodes": 7,
+        "l2_regularization": 1.0
+      },
+      "mae": 294.53023877376427,
+      "wape": 0.6088323067078665,
+      "bias": -64.30872461310358,
+      "observations": 160
+    },
+    {
+      "parameters": {
+        "max_leaf_nodes": 15,
+        "l2_regularization": 5.0
+      },
+      "mae": 298.77068172249056,
+      "wape": 0.6175978537453617,
+      "bias": -78.2046798068784,
+      "observations": 160
+    },
+    {
+      "parameters": {
+        "max_leaf_nodes": 31,
+        "l2_regularization": 10.0
+      },
+      "mae": 293.459292100911,
+      "wape": 0.606618520660264,
+      "bias": -119.48289947610128,
+      "observations": 160
+    }
+  ],
+  "models": {
+    "gradient_boosting": {
+      "mae": 324.6053301421762,
+      "wape": 0.5887508538509728,
+      "bias": -167.12485498704893,
+      "observations": 240
+    },
+    "seasonal_naive": {
+      "mae": 545.4791666666666,
+      "wape": 0.989359370630956,
+      "bias": 282.87916666666666,
+      "observations": 240
+    },
+    "rolling_mean": {
+      "mae": 289.771875,
+      "wape": 0.5255718960422602,
+      "bias": -34.35729166666667,
+      "observations": 240
+    }
+  },
+  "imputed_zero_weeks": 162,
+  "data_source": "UCI Online Retail II"
+}
